@@ -1,0 +1,22 @@
+name: '🚀 publish'
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    release:
+        name: 🚀 publish
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4.1.0
+            - name: Setup Node.js environment
+              uses: actions/setup-node@v3.8.1
+              with:
+                node-version: lts
+            - name: 🚀 publish
+              run: npm publish --access public
+              env:
+                NODE_AUTO_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
