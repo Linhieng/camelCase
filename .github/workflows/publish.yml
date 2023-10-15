@@ -2,23 +2,19 @@ name: '🚀 publish'
 
 on:
     push:
-        branches:
-            - main
+        branches: main
 
 jobs:
-    release:
+    publish:
         name: 🚀 publish
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout
-              uses: actions/checkout@v4
-
-            - name: Setup Node.js environment
-              uses: actions/setup-node@v3
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
               with:
-                node-version: 18
-
-            - name: 🚀 publish
-              run: npm publish --access public
-              env:
-                NODE_AUTO_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+                  node-version: '18'
+            - run: npm ci
+            - run: npm test
+            - uses: JS-DevTools/npm-publish@v2
+              with:
+                  token: ${{ secrets.NPM_AUTH_TOKEN }}
