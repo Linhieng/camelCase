@@ -16,7 +16,7 @@ jobs:
             - run: npm i -D @rollup/rollup-linux-x64-gnu
             - run: npm install
             - run: npm run build
-            # - run: npm test
+            - run: npm test
             - uses: JS-DevTools/npm-publish@v2
               with:
                   token: ${{ secrets.NPM_AUTH_TOKEN }}
