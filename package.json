@@ -1,0 +1,38 @@
+{
+    "name": "@lim/camelcase",
+    "description": "将对象的 key 的命名风格变为 camelCase",
+    "version": "0.0.1",
+    "license": "MIT",
+    "author": "Linhieng",
+    "repository": "linhieng/camelCase",
+    "homepage": "https://github.com/Linhieng/camelCase",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.mjs",
+    "typings": "dist/types/index.d.ts",
+    "files": [
+        "dist/"
+    ],
+    "scripts": {
+        "prebuild": "rimraf dist",
+        "build": "rollup --config",
+        "postbuild": "tsc -p tsconfig.build.json",
+        "test:unit": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
+        "prettier:write": "prettier . -w"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^25.0.5",
+        "@rollup/plugin-node-resolve": "^15.2.3",
+        "@rollup/plugin-typescript": "^11.1.5",
+        "@types/jest": "^29.5.5",
+        "camelcase": "^8.0.0",
+        "cross-env": "^7.0.3",
+        "jest": "^29.7.0",
+        "prettier": "^3.0.3",
+        "rimraf": "^5.0.5",
+        "rollup": "^4.1.0",
+        "tslib": "^2.6.2"
+    },
+    "engines": {
+        "node": ">=18"
+    }
+}
