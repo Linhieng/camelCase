@@ -16,7 +16,7 @@
         "prebuild": "rimraf dist",
         "build": "rollup --config",
         "postbuild": "tsc -p tsconfig.build.json",
-        "test:unit": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
+        "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
         "prettier:write": "prettier . --write",
         "eslint:check": "eslint src"
     },
