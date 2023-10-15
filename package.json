@@ -1,5 +1,5 @@
 {
-    "name": "@lim/camelcase",
+    "name": "@linhieng/camelcase",
     "description": "将对象的 key 的命名风格变为 camelCase",
     "version": "0.0.1",
     "license": "MIT",
