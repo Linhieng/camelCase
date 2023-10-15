@@ -18,7 +18,8 @@
         "postbuild": "tsc -p tsconfig.build.json",
         "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
         "prettier:write": "prettier . --write",
-        "eslint:check": "eslint src"
+        "eslint:check": "eslint src",
+        "prepare": "husky install"
     },
     "lint-staged": {
         "*.{js,cjs,mjs,json}": [
@@ -44,7 +45,8 @@
         "prettier": "^3.0.3",
         "rimraf": "^5.0.5",
         "rollup": "^4.1.0",
-        "tslib": "^2.6.2"
+        "tslib": "^2.6.2",
+        "husky": "^8.0.0"
     },
     "engines": {
         "node": ">=18"
